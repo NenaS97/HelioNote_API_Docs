@@ -1,0 +1,90 @@
+/* ========= Page Layout ========= */
+body {
+  background: #e6f2ff;   /* light blue background */
+  color: #000;           /* black text */
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========= Home Button ========= */
+.home-button {
+  display: inline-block;
+  background: #004080;     /* dark blue */
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin: 10px 0 20px 0;   /* spacing around the button */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s ease-in-out;
+}
+
+.home-button:hover {
+  background: #0066cc;     /* lighter blue on hover */
+}
+
+
+/* ========= Main Content ========= */
+main,
+#content,          /* some HTML5 transforms wrap with #content */
+.body,
+.map,
+.topic,
+.reference,
+.task,
+.concept {
+  max-width: 900px;
+  margin: 50px auto;   /* add more top/bottom spacing */
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 15px;      /* ensure consistent font size */
+  line-height: 1.6;
+}
+
+/* ========= Tables ========= */
+table {
+  margin: 1.5em auto;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
+/* ========= Code Blocks ========= */
+pre {
+  background: #f0f0f0;
+  padding: 12px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* ========= Inline Code (codeph) ========= */
+.codeph {
+  background: #ffcccc;   /* light red highlight */
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-family: Consolas, monospace;
+}
+
+/* ========= To Fix Index Title ========= */
+h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ========= Tighten first paragraph after heading ========= */
+h1 + p,
+h2 + p,
+h3 + p {
+  margin-top: 10px;   /* reduce or remove gap below H1 */
+}

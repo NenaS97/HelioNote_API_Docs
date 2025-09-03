@@ -1,0 +1,61 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="Use this endpoint to create a new note by sending its content in the request body."><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="post_notes"><title>Create a Note</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"><link rel="stylesheet" type="text/css" href="../../webhelp-override.css"></head><body id="post_notes"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+                <a href="../../index.html" class="home-button">Home</a>
+                
+                <h1 class="title topictitle1" id="ariaid-title1">Create a Note</h1>
+    
+    
+    <div class="body taskbody"><p class="shortdesc">Use this endpoint to create a new note by sending its content in the request body.</p>
+       
+        <section class="section prereq">
+            <ul class="ul">
+                <li class="li">You must have a valid API key.</li>
+                <li class="li">Ensure you include the <code class="ph codeph">Content-Type: application/json</code> header.</li>
+            </ul>
+        </section>
+           
+        <section><ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">Send a <code class="ph codeph">POST</code> request to <code class="ph codeph">/notes</code>.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">In the request body, provide the note details in JSON format:</span>
+                <div class="itemgroup info">
+                <ul class="ul">
+                    <li class="li"><code class="ph codeph">title</code> (string): The title of the note.</li>
+                    <li class="li"><code class="ph codeph">content</code> (string): The content of the note.</li>
+                    <li class="li"><code class="ph codeph">tags</code> (array, optional): A list of tags.</li>
+                </ul>
+                    </div>
+            </li></ol></section>
+        
+        <section class="section result">
+            <p class="p">If successful, the API returns a <code class="ph codeph">201 Created</code> status and the newly created note object in JSON.</p>
+        </section>
+        
+        <section class="example">
+            <p class="p"><strong class="ph b">Request (cURL):</strong></p>
+            <pre class="pre codeblock bash"><code>
+curl -X POST "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+"title": "Meeting Notes",
+"content": "Discuss project roadmap and deadlines.",
+"tags": ["work", "planning"]
+}'
+                </code></pre>
+            
+            <p class="p"><strong class="ph b">Response:</strong></p>
+            <pre class="pre codeblock json"><code>
+{
+<span class="hl-json_key">"id"</span>: <span class="hl-string">"789"</span>,
+<span class="hl-json_key">"title"</span>: <span class="hl-string">"Meeting Notes"</span>,
+<span class="hl-json_key">"content"</span>: <span class="hl-string">"Discuss project roadmap and deadlines."</span>,
+<span class="hl-json_key">"tags"</span>: [<span class="hl-string">"work"</span>, <span class="hl-string">"planning"</span>],
+<span class="hl-json_key">"created_at"</span>: <span class="hl-string">"2025-08-18T10:23:45Z"</span>
+}
+            </code></pre>
+        </section>
+               
+    </div>
+</article></main></body></html>

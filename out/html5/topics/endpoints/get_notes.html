@@ -1,0 +1,47 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="Use the GET /notes endpoint to fetch all notes associated with your account."><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="get-notes"><title>Retrieve All Notes</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"><link rel="stylesheet" type="text/css" href="../../webhelp-override.css"></head><body id="get-notes"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+                <a href="../../index.html" class="home-button">Home</a>
+                <h1 class="title topictitle1" id="ariaid-title1">Retrieve All Notes</h1>
+    
+    
+    <div class="body taskbody"><p class="shortdesc">Use the <code class="ph codeph">GET /notes</code> endpoint to fetch all notes associated with your account.</p>
+        
+        <section class="section prereq">
+            <p class="p">You need a valid API key.</p>
+        </section>
+        
+        <section><ol class="ol steps"><li class="li step">
+                <span class="ph cmd">Send a <code class="ph codeph">GET</code> request to the <code class="ph codeph">/notes</code> endpoint.</span>
+            </li><li class="li step">
+                <span class="ph cmd">Include your API key in the <code class="ph codeph">Authorization</code> header.</span>
+            </li></ol></section>
+        
+        <section class="section result">
+           <p class="p">If successful, you will receive a JSON response similar to this:</p>
+            <pre class="pre codeblock json"><code>
+[
+{
+<span class="hl-json_key">"id"</span>: <span class="hl-string">"1"</span>,
+<span class="hl-json_key">"title"</span>: <span class="hl-string">"Shopping List"</span>,
+<span class="hl-json_key">"content"</span>: <span class="hl-string">"Eggs, milk, bread"</span>
+},
+{
+<span class="hl-json_key">"id"</span>: <span class="hl-string">"2"</span>,
+<span class="hl-json_key">"title"</span>: <span class="hl-string">"Meeting Notes"</span>,
+<span class="hl-json_key">"content"</span>: <span class="hl-string">"Project update at 10 AM"</span>
+}
+]
+            </code></pre>
+        </section>
+        
+        <section class="example"><h2 class="title sectiontitle">Demo Request</h2>
+            
+            <pre class="pre codeblock bash"><code>
+curl -X GET "https://api.helionote.com/notes" \
+-H "Authorization: Bearer YOUR_API_KEY"
+            </code></pre>
+        </section>
+        
+    </div>
+</article></main></body></html>

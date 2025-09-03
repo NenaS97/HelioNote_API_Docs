@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="examples">
+    <title>API Usage Examples</title>
+    <shortdesc>The following examples demonstrate common use cases with the HelioNote REST API.</shortdesc>
+    
+    <refbody> 
+    
+        <example>
+            <title>1. Creating a Note</title>
+            <p>This example shows how to create a new note with a title and body.</p>
+        <codeblock outputclass="makefile">
+curl -X POST "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer [your_api_key]" \
+-H "Content-Type: application/json" \
+-d '{
+"title": "Meeting Notes",
+"content": "Discuss project milestones and deadlines."
+}'
+            </codeblock>
+        </example>
+        
+        <example>
+            <title>2. Retrieving All Notes</title>
+            <codeblock outputclass="sql">
+curl -X GET "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer [your_api_key]"
+            </codeblock>
+            
+            <p><b>Response:</b></p>
+            <codeblock outputclass="json">
+[
+{
+"id": "101",
+"title": "Meeting Notes",
+"content": "Discuss project milestones and deadlines."
+},
+{
+"id": "102",
+"title": "Shopping List",
+"content": "Milk, bread, eggs"
+}
+]
+               </codeblock> 
+        </example>
+        
+        <example>
+            <title>3. Updating a Note</title>
+            <codeblock outputclass="makefile">
+curl -X PUT "https://api.helionote.com/v1/notes/101" \
+-H "Authorization: Bearer [your_api_key]" \
+-H "Content-Type: application/json" \
+ -d '{
+"title": "Updated Meeting Notes",
+"content": "Revised project deadlines."
+}'
+                    </codeblock>
+        </example>
+        
+        <example>
+            <title>4. Deleting a Note</title>
+            <codeblock outputclass="sql">
+curl -X DELETE "https://api.helionote.com/v1/notes/101" \
+-H "Authorization: Bearer [your_api_key]"    
+                </codeblock>
+        </example>
+        
+    </refbody>
+</reference>

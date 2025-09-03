@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>INDEX</title>
+    
+    <topicref href="topics/intro.dita"/>
+    <topicref href="topics/authentication.dita"/>
+    <topicref href="topics/quickstart.dita"/>
+    
+    <topichead navtitle="Endpoints">
+        <topicref href="topics/endpoints/get_notes.dita"/>
+        <topicref href="topics/endpoints/post_notes.dita"/>
+        <topicref href="topics/endpoints/get_note_by_id.dita"/>
+        <topicref href="topics/endpoints/delete_note.dita"/>
+    </topichead>
+    
+    <topicref href="topics/errors.dita"/>
+    <topicref href="topics/keys.dita"/>
+    <topicref href="topics/examples.dita"/>
+    <topicref href="topics/faq.dita"/>
+        
+</map>

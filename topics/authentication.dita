@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="authentication">
+    <title>Authentication</title>
+    <shortdesc>HelioNote REST API uses API key–based authentication to secure access to all endpoints.</shortdesc>
+    
+    <conbody>
+        
+        <section>
+            <title>Overview</title>
+            <p>Authentication ensures that only authorized developers and applications can access the HelioNote API. Every request must include a valid API key.</p>
+        </section>
+        
+        <section>
+            <title>Authentication Method</title>
+            <p>Developers receive an API key from the HelioNote Developer Portal. Each request must include the key in the HTTP authorization header.</p>
+    
+    <codeblock outputclass="https">
+GET /notes HTTP/1.1
+Host: api.helionote.com
+Authorization: Bearer YOUR_API_KEY
+        </codeblock>
+        </section>
+   
+        <section>
+            <title>Security Considerations</title>
+            <ul>
+                <li>Keep your API key private. Do not share or hardcode it in public repositories.</li>
+                <li>Rotate API keys regularly to minimize security risks.</li>
+                <li>Always use HTTPS when sending requests to the HelioNote API.</li>
+            </ul>
+        </section>
+        
+    </conbody>
+</concept>

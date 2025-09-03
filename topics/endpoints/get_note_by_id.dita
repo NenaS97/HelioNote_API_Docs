@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="get_note_by_id">
+    <title>Retrieve a Note by ID</title>
+    <shortdesc>Use this endpoint to fetch the details of a single note by providing its unique identifier.</shortdesc>
+   
+    <taskbody>
+        
+        <context>
+            <p>The <codeph>GET /notes/{id}</codeph> endpoint allows developers to retrieve a specific note. This is useful when you need to display or update note details in your application.</p>
+        </context>
+        
+        <steps>
+            
+            <step>
+                <cmd>Send a <codeph>GET</codeph> request to: </cmd>
+                        <info>
+<codeblock outputclass="bash">
+/notes/{id}   
+</codeblock>
+            </info>
+            </step>
+            
+            <step>
+                <cmd>Replace <codeph>{id}</codeph> with the note’s unique identifier.</cmd>
+            </step>
+            
+            <step>
+                <cmd>Include a valid authentication token in the request header.</cmd>
+            </step>
+            
+        </steps>
+   
+   <result>
+       <p>The response contains the details of the requested note in JSON format. If the note does not exist, the API returns a <codeph>404 Not Found</codeph> error.</p>
+   </result>
+        
+<example>
+<p><b>Request(cURL</b></p>        
+<codeblock outputclass="bash">
+curl -X GET "https://api.helionote.com/v1/notes/123" \
+-H "Authorization: Bearer [your_api_key]"
+</codeblock>
+            
+<p><b>Response (JSON)</b></p>  
+<codeblock outputclass="json">
+{
+"id": "123",
+"title": "Project Kickoff",
+"content": "Meeting scheduled for Monday at 10 AM",
+"created_at": "2025-08-18T09:30:00Z"
+}
+</codeblock>
+</example>
+    
+    </taskbody>
+</task>

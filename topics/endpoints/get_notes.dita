@@ -1,0 +1,51 @@
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="get-notes">
+    <title>Retrieve All Notes</title>
+    <shortdesc>Use the <codeph>GET /notes</codeph> endpoint to fetch all notes associated with your account.</shortdesc>
+    
+    <taskbody>
+        
+        <prereq>
+            <p>You need a valid API key.</p>
+        </prereq>
+        
+        <steps>
+            
+            <step>
+                <cmd>Send a <codeph>GET</codeph> request to the <codeph>/notes</codeph> endpoint.</cmd>
+            </step>
+            
+            <step>
+                <cmd>Include your API key in the <codeph>Authorization</codeph> header.</cmd>
+            </step>
+            
+        </steps>
+        
+        <result>
+           <p>If successful, you will receive a JSON response similar to this:</p>
+            <codeblock outputclass="json">
+[
+{
+"id": "1",
+"title": "Shopping List",
+"content": "Eggs, milk, bread"
+},
+{
+"id": "2",
+"title": "Meeting Notes",
+"content": "Project update at 10 AM"
+}
+]
+            </codeblock>
+        </result>
+        
+        <example>
+            <title>Demo Request</title>
+            <codeblock outputclass="bash">
+curl -X GET "https://api.helionote.com/notes" \
+-H "Authorization: Bearer YOUR_API_KEY"
+            </codeblock>
+        </example>
+        
+    </taskbody>
+</task>

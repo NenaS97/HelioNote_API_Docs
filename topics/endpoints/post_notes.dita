@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="post_notes">
+    <title>Create a Note</title>
+    <shortdesc>Use this endpoint to create a new note by sending its content in the request body.</shortdesc>
+    
+    <taskbody>
+       
+        <prereq>
+            <ul>
+                <li>You must have a valid API key.</li>
+                <li>Ensure you include the <codeph>Content-Type: application/json</codeph> header.</li>
+            </ul>
+        </prereq>
+           
+        <steps>
+            
+            <step>
+                <cmd>Send a <codeph>POST</codeph> request to <codeph>/notes</codeph>.</cmd>
+            </step>
+            
+            <step>
+                <cmd>In the request body, provide the note details in JSON format:</cmd>
+                <info>
+                <ul>
+                    <li><codeph>title</codeph> (string): The title of the note.</li>
+                    <li><codeph>content</codeph> (string): The content of the note.</li>
+                    <li><codeph>tags</codeph> (array, optional): A list of tags.</li>
+                </ul>
+                    </info>
+            </step>
+          
+        </steps>
+        
+        <result>
+            <p>If successful, the API returns a <codeph>201 Created</codeph> status and the newly created note object in JSON.</p>
+        </result>
+        
+        <example>
+            <p><b>Request (cURL):</b></p>
+            <codeblock outputclass="bash">
+curl -X POST "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+"title": "Meeting Notes",
+"content": "Discuss project roadmap and deadlines.",
+"tags": ["work", "planning"]
+}'
+                </codeblock>
+            
+            <p><b>Response:</b></p>
+            <codeblock outputclass="json">
+{
+"id": "789",
+"title": "Meeting Notes",
+"content": "Discuss project roadmap and deadlines.",
+"tags": ["work", "planning"],
+"created_at": "2025-08-18T10:23:45Z"
+}
+            </codeblock>
+        </example>
+               
+    </taskbody>
+</task>

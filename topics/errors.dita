@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="errors">
+    <title>API Error Codes</title>
+    <shortdesc>The HelioNote API uses standard HTTP status codes to indicate success or failure. When an error occurs, the API returns a JSON response with details to help you debug.</shortdesc>
+    
+    <refbody> 
+    
+    <section>
+        <title>How Errors Are Returned</title>
+        <p>All errors include an HTTP status code and a JSON body with the following format:</p>
+<codeblock outputclass="json">{
+"error_code": "401",
+"message": "Invalid API key. Please provide a valid key."
+}
+</codeblock>
+</section>
+        
+        <section>
+            <title>Error Codes and Troubleshooting</title>
+            
+            <table frame="all" rowsep="1" colsep="1">
+                <tgroup cols="4">
+                    <colspec colname="c1" colwidth="108px" colsep="1" align="justify" rowsep="1"/>
+                    <colspec colname="c2" colwidth="142px" colsep="1" align="justify" rowsep="1"/>
+                    <colspec colname="c3" colwidth="156px" colsep="1" align="justify" rowsep="1"/>
+                    <colspec colname="c4" colwidth="198px" colsep="1" align="justify" rowsep="1"/>
+                    <thead>
+                        <row>
+                            <entry>Status Code</entry>
+                            <entry>Meaning</entry>
+                            <entry>Possible Causes</entry>
+                            <entry>Resolution</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>400 Bad Request</entry>
+                            <entry>Invalid request syntax or missing parameters.</entry>
+                            <entry>Required fields not included (e.g., title for notes).</entry>
+                            <entry>Verify the request body matches the API specification.</entry>
+                        </row>
+                        <row>
+                            <entry>401 Unauthorized</entry>
+                            <entry>Authentication failed.</entry>
+                            <entry>API key missing or invalid.</entry>
+                            <entry>Provide a valid API key in the request header.</entry>
+                        </row>
+                        <row>
+                            <entry>403 Forbidden</entry>
+                            <entry>Access denied.</entry>
+                            <entry>API key does not have permission for the requested
+                                operation.</entry>
+                            <entry>Check API key scopes and permissions.</entry>
+                        </row>
+                        <row>
+                            <entry>404 Not Found</entry>
+                            <entry>Resource not found.</entry>
+                            <entry>Invalid endpoint URL or non-existent note ID.</entry>
+                            <entry>Verify the endpoint path and resource ID.</entry>
+                        </row>
+                        <row>
+                            <entry>409 Conflict</entry>
+                            <entry>Request could not be completed due to a conflict</entry>
+                            <entry>Attempt to create a note with an existing ID.</entry>
+                            <entry>Use unique identifiers when creating resources.</entry>
+                        </row>
+                        <row>
+                            <entry>429 Too Many Requests</entry>
+                            <entry>Rate limit exceeded.</entry>
+                            <entry>Sending too many requests within a short time.</entry>
+                            <entry>Implement retry logic with exponential backoff.</entry>
+                        </row>
+                        <row>
+                            <entry>500 Internal Server Error</entry>
+                            <entry>Generic server-side failure.</entry>
+                            <entry>Unexpected server condition.</entry>
+                            <entry>Retry later or contact support if persistent.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+                </table>
+            </section>
+    
+    <example>
+        <title>Error Response</title>
+        <p><b>Request:</b></p>
+<codeblock outputclass="http">
+GET /api/v1/notes/9999
+Authorization: Bearer [your_api_key]
+</codeblock>
+        
+        <p><b>Response:</b></p>
+<codeblock outputclass="json">
+{
+"error_code": "404",
+"message": "Note not found. Please verify the note ID."
+}
+</codeblock>
+        </example>
+    
+    </refbody>
+</reference>

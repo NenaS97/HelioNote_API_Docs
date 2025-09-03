@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="keys">
+    <title>API Keys</title>
+    <shortdesc>An API key is a unique string that identifies and authenticates your requests to the HelioNote REST API. Every request must include a valid API key to ensure secure access to your account data.</shortdesc>
+    
+    <refbody> 
+    <section>
+        <title>Obtaining an API Key</title>
+        <p>To get an API key, sign in to your HelioNote developer account and navigate to the API Keys section in the dashboard. From there, you can generate a new key or manage existing ones.</p>
+        </section>
+    
+        <section>
+            <title>Using an API Key</title>
+            <p>Include your key in the Authorization header of every request, using the following format:</p>
+<codeblock outputclass="makefile">
+ Authorization: Bearer [your_api_key]     
+</codeblock>
+
+<p><b>Example:</b></p>
+<codeblock outputclass="sql">
+curl -X GET "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer abc123xyz456"
+</codeblock>
+        </section>
+        
+        <section>
+            <title>Security Best Practices</title>
+       <ul>
+           <li>Never share your API keys publicly or expose them in client-side code.</li>
+           <li>Rotate keys regularly to reduce security risks.</li>
+           <li>If a key is compromised, revoke it immediately and generate a new one.</li>
+           <li>Restrict keys to specific environments or IPs whenever possible.</li>
+           </ul>
+        </section>
+        
+        <section>
+            <title>Common API Key Issues</title>
+            <ul>
+                <li><b>Invalid key:</b> Ensure you copied the key correctly.</li>
+                <li><b>Missing key:</b> Add the <codeph>Authorization</codeph> header to your request.</li>
+                </ul>
+        </section>
+    
+    </refbody>
+</reference>

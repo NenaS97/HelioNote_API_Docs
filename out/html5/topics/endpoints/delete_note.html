@@ -1,0 +1,47 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="Use this endpoint to permanently delete a note from HelioNote by its unique identifier."><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="delete_note"><title>Delete a Note</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"><link rel="stylesheet" type="text/css" href="../../webhelp-override.css"></head><body id="delete_note"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+                <a href="../../index.html" class="home-button">Home</a>
+                <h1 class="title topictitle1" id="ariaid-title1">Delete a Note</h1>
+    
+    <div class="body taskbody"><p class="shortdesc">Use this endpoint to permanently delete a note from HelioNote by its unique identifier.</p>
+        
+        <section class="section context">
+            <p class="p">The <code class="ph codeph">DELETE /notes/{id}</code> endpoint removes a note from the system. This action cannot be undone, so it should be used carefully.</p>
+        </section>
+        
+        <section><ol class="ol steps"><li class="li step stepexpand">
+<span class="ph cmd">Send a <code class="ph codeph">DELETE</code> request to:</span>
+ <div class="itemgroup info">
+<pre class="pre codeblock bash"><code>
+/notes/{id}
+</code></pre>
+</div>
+</li><li class="li step stepexpand">
+                <span class="ph cmd">Replace <code class="ph codeph">{id}</code> with the note’s unique identifier.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Include a valid authentication token in the request header.</span>
+            </li></ol></section>
+        
+        <section class="section result">
+            <p class="p">The specified note is deleted. The response returns a success message. If the note does not exist, the API returns a <code class="ph codeph">404 Not Found</code> error.</p>
+        </section>
+        
+<section class="example">
+<p class="p"><strong class="ph b">Request (cURL)</strong></p>
+<pre class="pre codeblock bash"><code>
+curl -X DELETE "https://api.helionote.com/v1/notes/123" \
+-H "Authorization: Bearer [your_api_key]"
+</code></pre>
+            
+<p class="p"><strong class="ph b">Response (JSON)</strong></p>
+<pre class="pre codeblock bash"><code>
+{
+"message": "Note deleted successfully",
+"id": "123"
+}
+</code></pre>
+</section>
+        
+    </div>
+</article></main></body></html>

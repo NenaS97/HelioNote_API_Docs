@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="intro">
+    <title>HelioNote REST API Overview</title>
+    <shortdesc>The HelioNote REST API enables developers to integrate note-taking features into
+        their own applications. It provides endpoints for creating, retrieving, updating, and
+        deleting notes.</shortdesc>
+    
+    <conbody>
+        
+        <section>
+            <title>What is HelioNote?</title> 
+            <p>HelioNote is a fictional cloud-based note-taking service that allows users to create, organize, and share notes across devices.</p>
+        </section>
+        
+        <section>
+            <title>Why Use the API?</title> 
+            <p>The API allows developers to extend HelioNote’s functionality by embedding note management into their own apps or workflows.</p>
+        </section>
+        
+        <section>
+            <title>Key Features of the API</title> 
+            <ul>
+                <li>Secure authentication with API keys.</li>
+                <li>CRUD operations for notes.</li>
+                <li>JSON request and response format.</li>
+                <li>Error codes for easy debugging.</li>
+             </ul>   
+        </section>
+        
+        <section>
+            <title>Who Should Use This API?</title> 
+            <p>The HelioNote API is designed for developers building integrations, custom applications, or automations that require note management.</p>
+        </section>
+        
+        </conbody>
+</concept>

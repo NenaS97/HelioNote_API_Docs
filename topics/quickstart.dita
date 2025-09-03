@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart">
+    <title>Quickstart</title>
+    <shortdesc>Follow these steps to make your first request to the HelioNote REST API.</shortdesc>
+    
+    <taskbody>
+        
+        <prereq>
+            <p>You need an API key from the HelioNote Developer Portal and a tool like <codeph>curl</codeph> or Postman.</p>
+        </prereq>
+        
+        <steps>
+            
+            <step>
+                <cmd>Open your terminal or preferred API testing tool.</cmd>
+            </step>
+            
+            <step>
+                <cmd>Copy your API key.</cmd>
+            </step>
+            
+            <step>
+                <cmd>Make your first request to the <codeph>/notes</codeph> endpoint.</cmd>
+            <info>
+                <codeblock outputclass="bash">
+curl -X GET "https://api.helionote.com/notes" \
+-H "Authorization: Bearer YOUR_API_KEY"
+                </codeblock>
+                </info>
+            </step>
+            
+        </steps>
+        
+        <result>
+            <p>If successful, you will receive a JSON response similar to the following:</p>
+            <codeblock outputclass="json">
+[
+{
+"id": "1",
+"title": "First Note",
+"content": "This is your first note created in HelioNote."
+}
+]
+            </codeblock>
+        </result>
+        
+    </taskbody>
+</task>

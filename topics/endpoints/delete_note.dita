@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="delete_note">
+    <title>Delete a Note</title>
+    <shortdesc>Use this endpoint to permanently delete a note from HelioNote by its unique identifier.</shortdesc>
+    <taskbody>
+        
+        <context>
+            <p>The <codeph>DELETE /notes/{id}</codeph> endpoint removes a note from the system. This action cannot be undone, so it should be used carefully.</p>
+        </context>
+        
+        <steps>
+            
+<step>
+<cmd>Send a <codeph>DELETE</codeph> request to:</cmd>
+ <info>
+<codeblock outputclass="bash">
+/notes/{id}
+</codeblock>
+</info>
+</step>
+
+            <step>
+                <cmd>Replace <codeph>{id}</codeph> with the note’s unique identifier.</cmd>
+            </step>
+            
+            <step>
+                <cmd>Include a valid authentication token in the request header.</cmd>
+            </step>
+            
+        </steps>
+        
+        <result>
+            <p>The specified note is deleted. The response returns a success message. If the note does not exist, the API returns a <codeph>404 Not Found</codeph> error.</p>
+        </result>
+        
+<example>
+<p><b>Request (cURL)</b></p>
+<codeblock outputclass="bash">
+curl -X DELETE "https://api.helionote.com/v1/notes/123" \
+-H "Authorization: Bearer [your_api_key]"
+</codeblock>
+            
+<p><b>Response (JSON)</b></p>
+<codeblock outputclass="bash">
+{
+"message": "Note deleted successfully",
+"id": "123"
+}
+</codeblock>
+</example>
+        
+    </taskbody>
+</task>

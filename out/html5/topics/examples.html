@@ -1,0 +1,71 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="reference"><meta name="description" content="The following examples demonstrate common use cases with the HelioNote REST API."><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="examples"><title>API Usage Examples</title><link rel="stylesheet" type="text/css" href="../commonltr.css"><link rel="stylesheet" type="text/css" href="../webhelp-override.css"></head><body id="examples"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+                <a href="../index.html" class="home-button">Home</a>
+                
+                <h1 class="title topictitle1" id="ariaid-title1">API Usage Examples</h1>
+    
+    
+    <div class="body refbody"><p class="shortdesc">The following examples demonstrate common use cases with the HelioNote REST API.</p> 
+    
+        <div class="example"><h2 class="title sectiontitle">1. Creating a Note</h2>
+            
+            <p class="p">This example shows how to create a new note with a title and body.</p>
+        <pre class="pre codeblock makefile"><code>
+curl -X POST "https://api.helionote.com/v1/notes" \
+-H "Authorization: Bearer [your_api_key]" \
+-H "Content-Type: application/json" \
+-d '{
+"title": "Meeting Notes",
+"content": "Discuss project milestones and deadlines."
+}'
+            </code></pre>
+        </div>
+        
+        <div class="example"><h2 class="title sectiontitle">2. Retrieving All Notes</h2>
+            
+            <pre class="pre codeblock sql"><code>
+curl -X <strong class="hl-keyword">GET</strong> "https://api.helionote.com/v1/notes" \
+-H "<strong class="hl-keyword">Authorization</strong>: Bearer [your_api_key]"
+            </code></pre>
+            
+            <p class="p"><strong class="ph b">Response:</strong></p>
+            <pre class="pre codeblock json"><code>
+[
+{
+<span class="hl-json_key">"id"</span>: <span class="hl-string">"101"</span>,
+<span class="hl-json_key">"title"</span>: <span class="hl-string">"Meeting Notes"</span>,
+<span class="hl-json_key">"content"</span>: <span class="hl-string">"Discuss project milestones and deadlines."</span>
+},
+{
+<span class="hl-json_key">"id"</span>: <span class="hl-string">"102"</span>,
+<span class="hl-json_key">"title"</span>: <span class="hl-string">"Shopping List"</span>,
+<span class="hl-json_key">"content"</span>: <span class="hl-string">"Milk, bread, eggs"</span>
+}
+]
+               </code></pre> 
+        </div>
+        
+        <div class="example"><h2 class="title sectiontitle">3. Updating a Note</h2>
+            
+            <pre class="pre codeblock makefile"><code>
+curl -X PUT "https://api.helionote.com/v1/notes/101" \
+-H "Authorization: Bearer [your_api_key]" \
+-H "Content-Type: application/json" \
+ -d '{
+"title": "Updated Meeting Notes",
+"content": "Revised project deadlines."
+}'
+                    </code></pre>
+        </div>
+        
+        <div class="example"><h2 class="title sectiontitle">4. Deleting a Note</h2>
+            
+            <pre class="pre codeblock sql"><code>
+curl -X <strong class="hl-keyword">DELETE</strong> "https://api.helionote.com/v1/notes/<span class="hl-number">101</span>" \
+-H "<strong class="hl-keyword">Authorization</strong>: Bearer [your_api_key]"    
+                </code></pre>
+        </div>
+        
+    </div>
+</article></main></body></html>

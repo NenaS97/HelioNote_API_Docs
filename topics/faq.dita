@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="faq">
+    <title>Frequently Asked Questions (FAQ)</title>
+   
+    <refbody> 
+    
+     <section>
+         <title>Q1. Do I need an API key to use HelioNote?</title>
+         <p>Yes, all requests to the HelioNote REST API must be authenticated using an API key.</p>
+         </section>
+        
+        <section>
+            <title>Q2. Where can I get my API key?</title>
+            <p>API keys can be generated from your HelioNote account dashboard.</p>
+            </section>
+        
+        <section>
+            <title>Q3. What data format does the API use?</title>
+            <p>The API accepts requests and returns responses in JSON format</p>
+        </section>
+        
+        <section>
+            <title>Q4. Are there rate limits?</title>
+            <p>Yes, the default rate limit is <b>100 requests per minute</b> per API key. If you exceed the limit, you’ll receive a <codeph>429 Too Many Requests</codeph> error.</p>
+        </section>
+        
+        <section>
+            <title>Q5. Can I test the API without real data?</title>
+            <p>Yes, HelioNote provides a sandbox environment. Replace the base URL with:</p>
+            <codeblock outputclass="arduino">
+https://sandbox.api.helionote.com/v1/
+                </codeblock>
+        </section>
+        
+        <section>
+            <title>Q6. What happens if I delete a note?</title>
+            <p>Deleted notes are permanently removed and cannot be recovered.</p>
+        </section>
+        
+        <section>
+            <title>Q7. Who can I contact for support?</title>
+            <p>You can contact the HelioNote support team at support@helionote.com.</p>
+        </section>
+        
+        <section>
+            <title>Q8. Can I sort or filter my notes when fetching them?</title>
+            <p>Yes, you can use query parameters like <codeph>?sort=created_at_order;=desc</codeph>
+                or <codeph>?tag=work</codeph> to filter results.</p>
+        </section>
+        
+        <section>
+            <title>Q9. Does the API support pagination?</title>
+            <p>Yes, responses for large datasets are paginated. Use <codeph>limit</codeph> and <codeph>offset</codeph> query parameters to navigate through results.</p>
+        </section>
+        
+        <section>
+            <title>Q10. Is the API versioned?</title>
+            <p>Yes, all endpoints include the version in the URL (e.g.,<codeph>/v1/</codeph>). This ensures backward compatibility as new versions are released.</p>
+        </section>
+        
+    </refbody>
+</reference>
