@@ -4,7 +4,15 @@
 The goal was to design a simple, structured, and professional API documentation set with minimal design effort — keeping the layout clean, consistent, and easy to read.  
 
 ---
+## View the Live Site
 
+You can view the live HTML version of this documentation at:
+
+👉 **https://nenas97.github.io/HelioNote_API_Docs/**
+
+The site is automatically generated from the contents of the `docs/` folder using GitHub Pages.
+
+---
 ## DITA Elements Used
 
 ### Common Topic Elements
